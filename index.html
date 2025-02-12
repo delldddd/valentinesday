@@ -66,8 +66,8 @@
     </h1>
     <p id="pressNo">Press the no button for fun (let my code do its thing)</p>
     <div class="buttons">
-      <button id="yes" onclick="celebrate()">Yes</button>
-      <button id="no" onclick="shrinkAndGrow()">No</button>
+      <button id="yes">Yes</button>
+      <button id="no">No</button>
     </div>
   </div>
 
@@ -85,28 +85,28 @@
   <script>
     let noTexts = ["Are you sure?", "Come on puppy please", "No (yes)", "Delina sobs"];
     let noClickCount = 0;
-    
+
     function shrinkAndGrow() {
       let noButton = document.getElementById('no');
       let yesButton = document.getElementById('yes');
-      
+
       // Shrink the "No" button
       let currentNoSize = parseFloat(window.getComputedStyle(noButton).fontSize);
       let newNoSize = currentNoSize * 0.8;
       noButton.style.fontSize = `${newNoSize}px`;
       noButton.style.padding = `${newNoSize / 2}px`;
-      
+
       // Grow the "Yes" button
       let currentYesSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
       let newYesSize = currentYesSize * 1.2;
       yesButton.style.fontSize = `${newYesSize}px`;
       yesButton.style.padding = `${newYesSize / 2}px`;
-      
+
       // Update the "No" button text
       noButton.textContent = noTexts[noClickCount % noTexts.length];
       noClickCount++;
     }
-    
+
     function celebrate() {
       // Change background to white
       document.body.style.backgroundColor = "white";
@@ -115,7 +115,7 @@
       document.getElementById("celebration").style.display = "block";
       startConfetti();
     }
-    
+
     function startConfetti() {
       confetti({
         particleCount: 200,
@@ -123,6 +123,12 @@
         origin: { y: 0.6 }
       });
     }
+
+    // Attach event listeners after the DOM is fully loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("yes").addEventListener("click", celebrate);
+      document.getElementById("no").addEventListener("click", shrinkAndGrow);
+    });
   </script>
 </body>
 </html>
