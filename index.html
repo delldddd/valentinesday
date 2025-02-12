@@ -27,10 +27,6 @@
             justify-content: center;
             gap: 10px;
         }
-        .heart-img {
-            width: 30px;
-            height: 30px;
-        }
         .buttons {
             display: flex;
             gap: 20px;
@@ -54,7 +50,7 @@
 </head>
 <body>
     <h1 id="question">
-        <img src="https://em-content.zobj.net/source/apple/81/heavy-black-heart_2764.png" class="heart-img" alt="Heart"> Will you be my Valentine? <img src="https://em-content.zobj.net/source/apple/81/heavy-black-heart_2764.png" class="heart-img" alt="Heart">
+        <span style="font-size: 30px;">❤️</span> Will you be my Valentine? <span style="font-size: 30px;">❤️</span>
     </h1>
     <p id="pressNo">Press the no button for fun (let my code do its thing)</p>
     <div class="buttons">
@@ -89,9 +85,9 @@
             document.body.innerHTML = `
                 <div style="position: absolute; bottom: 10%; width: 100%; text-align: center;">
                     <h1 style="color: red; display: flex; align-items: center; justify-content: center; gap: 10px;">
-                        <img src="https://em-content.zobj.net/source/apple/81/heavy-black-heart_2764.png" class="heart-img" alt="Heart"> I love you! My forever Valentine <img src="https://em-content.zobj.net/source/apple/81/heavy-black-heart_2764.png" class="heart-img" alt="Heart">
+                        <span style="font-size: 30px;">❤️</span> I love you! My forever Valentine <span style="font-size: 30px;">❤️</span>
                     </h1>
-                    <img src="https://media.tenor.com/Jw2S3ImvAYwAAAAd/old-couple-dancing.gif" alt="Old couple dancing" style="max-width: 80%; height: auto;">
+                    <img src="https://media.tenor.com/35iYNsHTK2AAAAAd/andi-dancing-old-couple.gif" alt="Old couple dancing" style="max-width: 80%; height: auto;">
                 </div>
             `;
             startConfetti();
